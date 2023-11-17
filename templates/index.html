@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <h1>I am not the <b>Trend</b> follower.I am <i><b>Trend setter</b></i>.</h1>
+    <!-- <h2>{{details}}</h2> -->
+    <table border="1" cellpadding="5px" align="center">
+        <tr>
+            <th>name</th>
+            <th>address</th>
+            <th>marks</th>
+            <th>degree</th>
+        </tr>
+        {% for std in details %}
+       
+        <tr>
+            <td>{{std.name}}</td>
+            <td>{{std.address}}</td>
+            <td>{{std.marks}}</td>
+            <td>{{std.degree}}</td>
+        </tr>
+        
+        {%endfor%}
+    </table>
+    {% for s in details %}
+{% if s.marks > 60 %}
+    {{s.name}}
+    <br>
+    {% endif %}
+    {% endfor %}
+    <hr>
+    <img src="{% static 'images/former.jpg' %}" alt="no img" height="500px" width="700px">
+  
+
+    
+</body>
+</html>
